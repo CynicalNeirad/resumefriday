@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+<a href="/add">Create a new Resume</a><br/>
+<table>
+    <tr th:each="resume : ${resume}">
+
+        <th>Name:</th>
+        <td th:text="${resume.name}"></td>
+
+        <th>Email:</th>
+        <td th:text="${resume.email}"></td>
+
+        <th>Educational Achievements:</th>
+        <td th:text="${resume.education}"></td>
+
+        <th>Job Experience:</th>
+        <td th:text="${resume.experiences}"></td>
+
+        <th>Skills:</th>
+        <td th:text="${resume.skills}"></td> <br/>
+
+        <td>
+            <a th:href="@{/update/{id}(id=${resume.id})}">Update this Resume</a>
+            <a th:href="@{/delete/{id}(id=${resume.id})}">Delete this Resume</a>
+        </td>
+    </tr>
+    <tr th:each="resume : ${resume}">
+
+        <th>Name:</th>
+        <td th:text="${resume.name}"></td>
+
+        <th>Email:</th>
+        <td th:text="${resume.email}"></td>
+
+        <th>Educational Achievements:</th>
+        <td th:text="${resume.education}"></td>
+
+        <th>Job Experience:</th>
+        <td th:text="${resume.experiences}"></td>
+
+        <th>Skills:</th>
+        <td th:text="${resume.skills}"></td> <br/>
+
+        <td>
+            <a th:href="@{/update/{id}(id=${resume.id})}">Update this Resume</a>
+            <a th:href="@{/delete/{id}(id=${resume.id})}">Delete this Resume</a>
+        </td>
+    </tr>
+</table>
+th:each="resume : ${resume}">
+    <span th:text="${resume.name}">t </span></br>
+    <span th:text="${resume.name}">t </span></br>
+
+</body>
+</html>
